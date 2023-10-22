@@ -125,9 +125,9 @@ public class AccountController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult> ForgotPassword([FromBody] string email)
+    public async Task<ActionResult> ForgotPassword([FromBody] ForgetPasswordRequest request)
     {
-        var user = await _accountService.GetDetailAsync(c => c.NormalizedEmail == email.ToUpper());
+        var user = await _accountService.GetDetailAsync(c => c.NormalizedEmail == request.Email.ToUpper());
         if (user is null) return BadRequest("User not found, please check your email!");
         var result = await _accountService.ForgetPasswordAsync(user);
         return Ok(result);

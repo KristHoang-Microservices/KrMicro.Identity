@@ -10,3 +10,15 @@ F:\Projects\Krist_Micoservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrM
 F:\Projects\Krist_Micoservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\refint\KrMicro.Core.dll
 F:\Projects\Krist_Micoservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.pdb
 F:\Projects\Krist_Micoservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\ref\KrMicro.Core.dll
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\bin\Debug\net6.0\KrMicro.Core.deps.json
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\bin\Debug\net6.0\KrMicro.Core.dll
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\bin\Debug\net6.0\KrMicro.Core.pdb
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.csproj.AssemblyReference.cache
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.AssemblyInfoInputs.cache
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.AssemblyInfo.cs
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.csproj.CoreCompileInputs.cache
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.dll
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\refint\KrMicro.Core.dll
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\KrMicro.Core.pdb
+F:\Projects\Krist_Microservice\KrMicro.Identity\KrMicro.Core\obj\Debug\net6.0\ref\KrMicro.Core.dll

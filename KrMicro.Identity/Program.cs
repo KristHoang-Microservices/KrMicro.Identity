@@ -10,10 +10,10 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("DbSQL");
+var connectionString = builder.Configuration.GetConnectionString("DbNeon");
 
 builder.Services.AddDbContext<KrIdentityDbContext>(opt =>
-    opt.UseSqlServer(connectionString));
+    opt.UseNpgsql(connectionString));
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 
@@ -85,11 +85,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 using (var scope = app.Services.CreateScope())
 {

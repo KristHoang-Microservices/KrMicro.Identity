@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {}
+    "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {}
   },
   "projects": {
-    "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {
+    "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
+        "projectUniqueName": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
         "projectName": "KrMicro.Core",
-        "projectPath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
+        "projectPath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
         "packagesPath": "C:\\Users\\KristHoang\\.nuget\\packages\\",
-        "outputPath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\obj\\",
+        "outputPath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KristHoang\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\KristHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
         }
       }
     }

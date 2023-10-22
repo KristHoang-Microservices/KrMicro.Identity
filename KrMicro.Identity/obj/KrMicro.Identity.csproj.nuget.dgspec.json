@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj": {}
+    "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj": {}
   },
   "projects": {
-    "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {
+    "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
+        "projectUniqueName": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
         "projectName": "KrMicro.Core",
-        "projectPath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
+        "projectPath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
         "packagesPath": "C:\\Users\\KristHoang\\.nuget\\packages\\",
-        "outputPath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\obj\\",
+        "outputPath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KristHoang\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\KristHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,34 +65,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj": {
+    "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj",
+        "projectUniqueName": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj",
         "projectName": "KrMicro.Identity",
-        "projectPath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj",
+        "projectPath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Identity\\KrMicro.Identity.csproj",
         "packagesPath": "C:\\Users\\KristHoang\\.nuget\\packages\\",
-        "outputPath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Identity\\obj\\",
+        "outputPath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Identity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KristHoang\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\KristHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {
-                "projectPath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj"
+              "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj": {
+                "projectPath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj"
               }
             }
           }
@@ -105,6 +109,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.62.0.3175, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.22, )"
@@ -141,6 +149,14 @@
               "target": "Package",
               "version": "[6.0.22, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -165,7 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bSNGGt+NbHsaYflM4H7z4P6aMsM0GFHHTvR2P0PyX9DsFm3jGV4KWDXVOjZ2cOl4kgYFsYgLmXeUFomda8yq+Q==",
+  "dgSpecHash": "TXJxdWPdoO4Qh8dh7i/CUbkc+/qc8MUoqNKoCwHx+lqwaVrqTunxyc7P2HTOj6fygIDOr4u2J3RQa1VPGdMfhQ==",
   "success": true,
-  "projectFilePath": "F:\\Projects\\Krist_Micoservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
+  "projectFilePath": "F:\\Projects\\Krist_Microservice\\KrMicro.Identity\\KrMicro.Core\\KrMicro.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KristHoang\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.22\\microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
     "C:\\Users\\KristHoang\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
