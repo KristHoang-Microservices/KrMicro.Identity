@@ -23,7 +23,7 @@ public static class JwtUtils
             jwtIssuer,
             jwtAudience,
             claims,
-            expires: DateTime.Now.AddMinutes(15),
+            expires: DateTime.Now.AddHours(24),
             signingCredentials: credentials);
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
