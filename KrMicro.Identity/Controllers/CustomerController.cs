@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace KrMicro.Identity.Controllers;
 
 [Controller]
-[Route("Customers/[action]")]
+[Route("Customers")]
 [Consumes("application/json")]
 public class CustomerController : Controller
 {
@@ -39,8 +39,7 @@ public class CustomerController : Controller
         return Ok(new GetAllCustomerQueryResult(customers.ToList()));
     }
 
-    [HttpGet]
-    [Route("{id}")]
+    [HttpGet("{id}")]
     [Authorize(Roles = "Admin,Employee")]
     public async Task<ActionResult<Customer>> GetCustomerById(short id)
     {

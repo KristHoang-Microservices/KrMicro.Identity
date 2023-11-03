@@ -66,6 +66,28 @@ public class AccountController : ControllerBase
 
     [HttpPost]
     [AllowAnonymous]
+    public async Task<ActionResult> SignUpEmployee([FromBody] SignUpAdminCommandRequest request)
+    {
+        var result = await _accountService.SignUpForAdminAsync(request);
+        if (result.Succeeded)
+        {
+            var roleAssign = await _accountService.AssignRoleToUserAsync(request.UserName, "Employee");
+            if (roleAssign.Succeeded)
+                return new ObjectResult(new
+                {
+                    accessToken =
+                        await _accountService.LoginAndGetAccessTokenAsync(
+                            new LoginCommandRequest(request.UserName, request.Password))
+                });
+
+            return StatusCode(500, roleAssign);
+        }
+
+        return BadRequest(result);
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
     public async Task<ActionResult> Login([FromBody] LoginCommandRequest request)
     {
         var result = await _accountService.LoginAndGetAccessTokenAsync(request);

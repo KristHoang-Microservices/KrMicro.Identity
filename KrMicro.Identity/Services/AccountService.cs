@@ -12,6 +12,7 @@ public interface IAccountService : IBaseService<ApplicationUser>
 {
     public Task<IdentityResult> SignUpForCustomerAsync(SignUpCommandRequest request);
     public Task<IdentityResult> SignUpForAdminAsync(SignUpAdminCommandRequest request);
+    public Task<IdentityResult> SignUpForEmployeeAsync(SignUpAdminCommandRequest request);
     public Task<string> LoginAndGetAccessTokenAsync(LoginCommandRequest request);
     public Task<ApplicationUser?> GetUserByTokenAsync(string accessToken);
     public Task<IdentityResult> AssignRoleToUserAsync(ApplicationUser user, string role);
@@ -77,6 +78,22 @@ public class AccountService : BaseRepositoryService<ApplicationUser, KrIdentityD
     }
 
     public async Task<IdentityResult> SignUpForAdminAsync(SignUpAdminCommandRequest request)
+    {
+        var newUser = new ApplicationUser
+        {
+            FullName = request.FullName,
+            Email = request.Email,
+            UserName = request.UserName
+        };
+
+        var result = await _userManager.CreateAsync(newUser, request.Password);
+
+        if (!result.Succeeded) return result;
+
+        return result;
+    }
+
+    public async Task<IdentityResult> SignUpForEmployeeAsync(SignUpAdminCommandRequest request)
     {
         var newUser = new ApplicationUser
         {
