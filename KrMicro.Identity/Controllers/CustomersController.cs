@@ -9,25 +9,24 @@ using Microsoft.AspNetCore.Mvc;
 namespace KrMicro.Identity.Controllers;
 
 [Controller]
-[Route("Customers")]
+[Route("api/[controller]")]
 [Consumes("application/json")]
-public class CustomerController : Controller
+public class CustomersController : Controller
 {
     private readonly ICustomerService _customerService;
 
-    public CustomerController(ICustomerService customerService)
+    public CustomersController(ICustomerService customerService)
     {
         _customerService = customerService;
     }
 
-    [HttpGet]
+    [HttpGet("CurrentProfile")]
     [Authorize(Roles = "Customer")]
     public async Task<ActionResult<Customer>> GetCurrentProfile()
     {
         var userName = JwtUtils.GetUserNameByToken(HttpContext.Request.Headers.Authorization);
         if (userName == string.Empty) return Unauthorized("Access token not valid");
         var customer = await _customerService.GetDetailAsync(c => c.UserInformation.UserName == userName);
-
         return Ok(customer);
     }
 
@@ -41,14 +40,13 @@ public class CustomerController : Controller
 
     [HttpGet("{id}")]
     [Authorize(Roles = "Admin,Employee")]
-    public async Task<ActionResult<Customer>> GetCustomerById(short id)
+    public async Task<ActionResult<GetCustomerDetailQueryResult>> GetCustomerById(short id)
     {
         var customer = await _customerService.GetDetailAsync(c => c.Id == id);
         return customer is not null ? Ok(customer) : BadRequest("Not found");
     }
 
-    [HttpPatch]
-    [Route("{userId}")]
+    [HttpPatch("{userId}")]
     [Authorize]
     public async Task<ActionResult> UpdateCustomerProfile([FromRoute] string userId,
         [FromBody] UpdateCustomerCommandRequest request)

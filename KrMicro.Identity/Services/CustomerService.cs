@@ -49,6 +49,7 @@ public class CustomerService : BaseRepositoryService<Customer, KrIdentityDbConte
         var result = await DataContext.Set<Customer>()
             .AsNoTracking()
             .Include(c => c.UserInformation)
+            .Where(predicate)
             .Select(c => new
             {
                 c.Id, c.FullAddress, c.DOB, c.Point, Name = c.UserInformation.FullName,

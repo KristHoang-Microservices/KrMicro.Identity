@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KrMicro.Identity.Controllers;
 
-[Route("Identity/[action]")]
+[Route("api/Identity/[action]")]
 [Authorize]
 [Consumes("application/json")]
 public class AccountController : ControllerBase
@@ -32,7 +32,7 @@ public class AccountController : ControllerBase
                 return new ObjectResult(new
                 {
                     accessToken =
-                        await _accountService.LoginAndGetAccessTokenAsync(
+                        await _accountService.LoginAndGetAccessTokenWebAsync(
                             new LoginCommandRequest(request.UserName, request.Password))
                 });
 
@@ -97,6 +97,17 @@ public class AccountController : ControllerBase
         return new ObjectResult(new { accessToken = result });
     }
 
+    [HttpPost]
+    [AllowAnonymous]
+    public async Task<ActionResult> LoginWeb([FromBody] LoginCommandRequest request)
+    {
+        var result = await _accountService.LoginAndGetAccessTokenWebAsync(request);
+
+        if (string.IsNullOrEmpty(result)) return BadRequest("Login failed");
+
+        return new ObjectResult(new { accessToken = result });
+    }
+
     [HttpPatch]
     [Route("{id}")]
     public async Task<ActionResult> UpdateUserProfile([FromRoute] string id,
@@ -114,6 +125,8 @@ public class AccountController : ControllerBase
         var userName = JwtUtils.GetUserNameByToken(HttpContext.Request.Headers.Authorization);
         if (userName == string.Empty) return Unauthorized("Access token not valid");
         var user = await _accountService.GetDetailAsync(c => c.UserName == userName);
+        if (user == null) return BadRequest();
+        user.PasswordHash = null;
         return Ok(user);
     }
 

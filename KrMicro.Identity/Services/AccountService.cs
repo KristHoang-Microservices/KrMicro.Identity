@@ -14,6 +14,7 @@ public interface IAccountService : IBaseService<ApplicationUser>
     public Task<IdentityResult> SignUpForAdminAsync(SignUpAdminCommandRequest request);
     public Task<IdentityResult> SignUpForEmployeeAsync(SignUpAdminCommandRequest request);
     public Task<string> LoginAndGetAccessTokenAsync(LoginCommandRequest request);
+    public Task<string> LoginAndGetAccessTokenWebAsync(LoginCommandRequest request);
     public Task<ApplicationUser?> GetUserByTokenAsync(string accessToken);
     public Task<IdentityResult> AssignRoleToUserAsync(ApplicationUser user, string role);
     public Task<IdentityResult> AssignRoleToUserAsync(string userName, string role);
@@ -67,7 +68,7 @@ public class AccountService : BaseRepositoryService<ApplicationUser, KrIdentityD
         var newCustomer = new Customer
         {
             DOB = request.DOB,
-            FullAddress = request.FullAddress,
+            FullAddress = request.FullAddress ?? "",
             UserInformation = user,
             UserId = user.Id
         };
@@ -117,7 +118,21 @@ public class AccountService : BaseRepositoryService<ApplicationUser, KrIdentityD
 
         var user = await _signInManager.UserManager.FindByNameAsync(request.Username);
         var role = await _signInManager.UserManager.GetRolesAsync(user);
+        if (role.FirstOrDefault() != "Admin" && role.FirstOrDefault() != "Employee") return string.Empty;
+        return JwtUtils.GenerateToken(
+            new GenerateJwtCommandRequest(user.Id, request.Username, role.FirstOrDefault() ?? ""),
+            _configuration["Jwt:Key"], _configuration["Jwt:ValidIssuer"], _configuration["Jwt:ValidAudience"]);
+    }
 
+    public async Task<string> LoginAndGetAccessTokenWebAsync(LoginCommandRequest request)
+    {
+        var result = await _signInManager.PasswordSignInAsync(request.Username, request.Password, false, false);
+
+        if (!result.Succeeded) return string.Empty;
+
+        var user = await _signInManager.UserManager.FindByNameAsync(request.Username);
+        var role = await _signInManager.UserManager.GetRolesAsync(user);
+        if (role.FirstOrDefault() != "Customer") return string.Empty;
         return JwtUtils.GenerateToken(
             new GenerateJwtCommandRequest(user.Id, request.Username, role.FirstOrDefault() ?? ""),
             _configuration["Jwt:Key"], _configuration["Jwt:ValidIssuer"], _configuration["Jwt:ValidAudience"]);
